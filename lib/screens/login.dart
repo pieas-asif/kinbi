@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kinbi/screens/home.dart';
 import 'package:kinbi/screens/registration.dart';
 
 class LoginPage extends StatefulWidget {
@@ -117,7 +118,8 @@ class _LoginPageState extends State<LoginPage> {
                       if (_isPasswordEmpty) {
                         print("Reset Password");
                       } else {
-                        print("Hi");
+                        Navigator.pushNamedAndRemoveUntil(
+                            context, HomePage.id, (route) => false);
                       }
                     },
                     child: Padding(
