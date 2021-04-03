@@ -9,6 +9,7 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   bool _isVisible = false;
+  bool _isPasswordEmpty = true;
 
   @override
   Widget build(BuildContext context) {
@@ -76,6 +77,17 @@ class _LoginPageState extends State<LoginPage> {
                       horizontal: 20,
                     ),
                     child: TextField(
+                      onChanged: (val) {
+                        if (val.length > 0) {
+                          setState(() {
+                            _isPasswordEmpty = false;
+                          });
+                        } else {
+                          setState(() {
+                            _isPasswordEmpty = true;
+                          });
+                        }
+                      },
                       obscureText: !_isVisible,
                       decoration: InputDecoration(
                         prefixIcon: Icon(Icons.vpn_key),
@@ -102,13 +114,19 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   ElevatedButton(
                     onPressed: () {
-                      print("Hi");
+                      if (_isPasswordEmpty) {
+                        print("Reset Password");
+                      } else {
+                        print("Hi");
+                      }
                     },
                     child: Padding(
                       padding: const EdgeInsets.symmetric(
                         horizontal: 100,
                       ),
-                      child: Text("LOGIN"),
+                      child: _isPasswordEmpty
+                          ? Text("Forgot Password")
+                          : Text("LOGIN"),
                     ),
                   ),
                 ],
