@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kinbi/widgets/posts.dart';
 
 class HomePage extends StatefulWidget {
   static const String id = "home_page";
@@ -30,10 +31,23 @@ class _HomePageState extends State<HomePage> {
           ),
         ],
       ),
-      body: Center(
-        child: Text(
-          "Rafin will post something juicy here",
-        ),
+      body: ListView(
+        padding: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+        children: [
+          Post(),
+          Post(),
+          SizedBox(
+            height: 50,
+          ),
+          Text(
+            " END OF LISTINGS ",
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              color: Colors.grey,
+              fontSize: 12,
+            ),
+          ),
+        ],
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: [
