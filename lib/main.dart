@@ -2,6 +2,7 @@ import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:kinbi/screens/home.dart';
 import 'package:kinbi/screens/login.dart';
+import 'package:kinbi/screens/post_view.dart';
 import 'package:kinbi/screens/registration.dart';
 import 'package:page_transition/page_transition.dart';
 
@@ -33,6 +34,7 @@ class MyApp extends StatelessWidget {
         LoginPage.id: (context) => LoginPage(),
         RegistrationPage.id: (context) => RegistrationPage(),
         HomePage.id: (context) => HomePage(),
+        PostViewPage.id: (context) => PostViewPage(),
       },
     );
   }

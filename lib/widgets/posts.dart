@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kinbi/screens/post_view.dart';
 
 class Post extends StatelessWidget {
   @override
@@ -45,14 +46,21 @@ class Post extends StatelessWidget {
           SizedBox(
             height: 5,
           ),
-          Image(
-            image: AssetImage("images/product.jpeg"),
+          GestureDetector(
+            child: Image(
+              image: AssetImage("images/product.jpeg"),
+              height: MediaQuery.of(context).size.width,
+              fit: BoxFit.cover,
+            ),
+            onTap: () {
+              Navigator.pushNamed(context, PostViewPage.id);
+            },
           ),
           SizedBox(
             height: 10,
           ),
           Text(
-            "Audemars Piguet - An luxury Watch",
+            "Samsung Galaxy S7 Edge",
             style: TextStyle(
               fontSize: 18,
             ),
@@ -75,7 +83,7 @@ class Post extends StatelessWidget {
                     width: 15,
                   ),
                   Text(
-                    "£: 101.14",
+                    "£: 48.14",
                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
                   ),
                   SizedBox(
@@ -94,7 +102,7 @@ class Post extends StatelessWidget {
                 ],
               ),
               Text(
-                "Time: 2d 12h",
+                "Ends In: 2d 12h",
                 style: TextStyle(fontSize: 18),
               ),
             ],
