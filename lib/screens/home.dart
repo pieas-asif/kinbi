@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kinbi/screens/profile.dart';
 import 'package:kinbi/widgets/posts.dart';
 
 class HomePage extends StatefulWidget {
@@ -64,6 +65,15 @@ class _HomePageState extends State<HomePage> {
             icon: Icon(Icons.account_circle_outlined),
           ),
         ],
+        onTap: (index) {
+          switch (index) {
+            case 2:
+              Navigator.pushNamed(context, ProfilePage.id);
+              break;
+            default:
+              print("Error");
+          }
+        },
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
